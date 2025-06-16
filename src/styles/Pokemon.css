@@ -12,11 +12,14 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   transition: transform 0.2s ease;
   position: relative;
+  
 }
 
 .pokemon-card:hover {
   transform: scale(1.05);
+  cursor: pointer;
 }
+
 
 .pokemon-card img {
   width: 100px;
@@ -60,4 +63,79 @@
   font-size: 1.5rem;
   color: #555;
   margin-top: 3rem;
+}
+
+/* Blur effect when modal is active */
+.blurred {
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+/* Modal Content */
+.modal-content {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1001;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Responsive Image Inside Modal */
+.modal-content img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Responsive typography and spacing */
+.modal-content h2 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.modal-content p {
+  font-size: 1rem;
+  margin: 0.3rem 0;
+}
+
+/* Optional: Make modal scrollable on very small screens */
+@media (max-height: 500px) {
+  .modal-content {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
 }
